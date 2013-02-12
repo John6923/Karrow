@@ -1,16 +1,27 @@
 package com.jsquared.karrow;
 
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Loader extends JFrame {
+@SuppressWarnings("serial")
+public class Loader extends JFrame implements LoaderConstants {
 	
-	private JLabel label = new JLabel("Loader");
+	private JLabel defaultlabel = new JLabel(LOADER_INFO);
+	private JButton defaultbutton = new JButton(DEFAULT_BUTTON_LABEL);
+	private JButton customButton = new JButton(CUSTOM_BUTTON_LABEL);
+	private JLabel customLabel = new JLabel(CONFIG_INFO);
 	
 	public Loader(){
 		setSize(200,200);
+		setLayout(new GridLayout(2,2,5,5));
 		setTitle("Loader");
-		add(label);
+		add(defaultlabel);
+		add(customLabel);
+		add(defaultbutton);
+		add(customButton);
 		setVisible(true);
 	}
 
